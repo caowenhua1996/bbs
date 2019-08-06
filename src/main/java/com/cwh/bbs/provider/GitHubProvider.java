@@ -1,8 +1,8 @@
 package com.cwh.bbs.provider;
 
 import com.alibaba.fastjson.JSON;
-import com.cwh.bbs.pojo.AccessToken;
-import com.cwh.bbs.pojo.GitHubUser;
+import com.cwh.bbs.dto.AccessToken;
+import com.cwh.bbs.dto.GitHubUser;
 import okhttp3.*;
 import org.springframework.stereotype.Component;
 
@@ -36,7 +36,6 @@ public class GitHubProvider {
         try {
             Response response = client.newCall(request).execute();
             String string = response.body().string();
-            System.out.println(string);
             GitHubUser gitHubUser = JSON.parseObject(string, GitHubUser.class);
             return gitHubUser;
         } catch (Exception e) {

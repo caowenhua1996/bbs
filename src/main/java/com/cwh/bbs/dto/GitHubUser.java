@@ -1,4 +1,4 @@
-package com.cwh.bbs.pojo;
+package com.cwh.bbs.dto;
 
 public class GitHubUser {
 
